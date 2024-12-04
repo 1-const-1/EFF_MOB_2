@@ -1,8 +1,8 @@
 import * as React from "react";
-import Table from "./Table";
+import TableRender from "./TableRender";
 
 const App = () => {
-  return (<Table />);
+  return (<TableRender />);
 }
 
 export default App;

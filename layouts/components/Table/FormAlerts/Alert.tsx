@@ -1,30 +1,9 @@
 import * as React from "react";
 import {GoCheckCircle, GoAlertFill} from "react-icons/go";
-import { getProblemUsers } from "../../fetch";
+import {solveProblem } from "../../fetch";
 
 import "./Alert.sass";
 
-const solveProblem = async (userId : number) => {
-  try {
-
-    const res = await fetch("/solve", {
-      method: "POST",
-      headers: {
-        "content-type" : "application/json",
-      },
-      body: JSON.stringify({id : userId}),
-    });
-
-    if (!res.ok)
-      throw new Error(`HTTP response status: ${res.status}`);
-
-    return res.json();
-
-  } catch (err) {
-    console.log(err);
-    throw err;
-  }
-}
 
 const Alert = (props:{
   userId : number, 
@@ -48,18 +27,12 @@ const Alert = (props:{
         if (props.problem)
           return <button onClick={async () => {
             try {
-
-              const res1 = await solveProblem(props.userId);
-              if (!res1)
+              const res = await solveProblem(props.userId);
+              if (!res)
                 throw new Error("Response value is empty.");
 
               props.setterProblems(false);
-
-              const res2 = await getProblemUsers();
-              if (!res2)
-                throw new Error("Response value is empty.");
-
-              props.setterTrouble(res2.troubles);
+              props.setterTrouble(res.troubles);
               
             } catch (err) {
               console.log(err);

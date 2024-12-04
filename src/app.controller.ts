@@ -3,12 +3,6 @@ import { pgclnt } from "./pgclnt";
 
 @Controller()
 export class MainPage {
-  @Get("/users")
-  async getProblemUsers () {
-    const troubles = (await pgclnt.query("SELECT problem FROM users WHERE problem=true")) .rowCount;
-    return {troubles: troubles};
-  }
-
   @Post("/page")
   async getPage (@Body() body : any) {
     const jData = body;
@@ -26,7 +20,10 @@ export class MainPage {
   @Post("/solve")
   async solveProblem (@Body() body : any) {
     const jData = body;
+
     await pgclnt.query(`UPDATE users SET problem=false WHERE id=${jData.id}`);
-    return {status: "success", message: "updated successfully", value: 1}
+    const troubles = (await pgclnt.query("SELECT problem FROM users WHERE problem=true")) .rowCount;
+
+    return {troubles: troubles}
   }
 }

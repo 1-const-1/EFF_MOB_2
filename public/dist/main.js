@@ -86,7 +86,17 @@ eval("\n\nif (false) {} else {\n  module.exports = __webpack_require__(/*! ./cjs
   \************************************/
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
-eval("\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nconst React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\nconst App = () => {\n    return (React.createElement(\"p\", null, \"This is a simple user interface.\"));\n};\nexports[\"default\"] = App;\n\n\n//# sourceURL=webpack://app/./layouts/components/App.tsx?");
+eval("\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nconst React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\nconst Table_1 = __webpack_require__(/*! ./Table */ \"./layouts/components/Table.tsx\");\nconst App = () => {\n    return (React.createElement(Table_1.default, null));\n};\nexports[\"default\"] = App;\n\n\n//# sourceURL=webpack://app/./layouts/components/App.tsx?");
+
+/***/ }),
+
+/***/ "./layouts/components/Table.tsx":
+/*!**************************************!*\
+  !*** ./layouts/components/Table.tsx ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+eval("\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nconst React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\nconst getPage = async (page, pLength) => {\n    try {\n        const res = await fetch(\"/page\", {\n            method: \"POST\",\n            headers: {\n                \"content-type\": \"application/json\",\n            },\n            body: JSON.stringify({\n                page: page,\n                pLength: pLength,\n            }),\n        });\n        if (!res.ok) {\n            throw new Error(`HTTP status: ${res.status}`);\n        }\n        return res.json();\n    }\n    catch (err) {\n        console.log(err);\n        throw err;\n    }\n};\nconst Table = () => {\n    const [maxLength, setMaxLength] = React.useState(1);\n    const [lastPage, setLastPage] = React.useState(1);\n    React.useEffect(() => {\n        (async () => {\n            try {\n                const res = await getPage(1, 50);\n                console.log(res);\n                setMaxLength(res.len);\n            }\n            catch (err) {\n                console.log(err);\n                throw err;\n            }\n        })();\n    }, []);\n    return (React.createElement(\"div\", null,\n        React.createElement(\"div\", null,\n            React.createElement(\"h1\", null, \"Our users have problems\")),\n        React.createElement(\"div\", null,\n            React.createElement(\"form\", { onSubmit: (e) => e.preventDefault() },\n                React.createElement(\"div\", null,\n                    React.createElement(\"input\", { onChange: (e) => setLastPage(Number(e.target.value)), type: \"text\", value: lastPage }),\n                    React.createElement(\"div\", null,\n                        \"max: \",\n                        maxLength)),\n                React.createElement(\"div\", null,\n                    React.createElement(\"button\", { onClick: () => getPage(lastPage, 50) }, \"Submit\"))))));\n};\nexports[\"default\"] = Table;\n\n\n//# sourceURL=webpack://app/./layouts/components/Table.tsx?");
 
 /***/ }),
 

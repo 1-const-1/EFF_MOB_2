@@ -1,9 +1,8 @@
 import * as React from "react";
+import Table from "./Table";
 
 const App = () => {
-  return (
-    <p>This is a simple user interface.</p>
-  );
+  return (<Table />);
 }
 
 export default App;

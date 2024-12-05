@@ -1,0 +1,8 @@
+CREATE TABLE users (
+  id SERIAL,
+  name VARCHAR(64) NOT NULL,
+  surname VARCHAR(64) NOT NULL,
+  age SMALLINT,
+  gender VARCHAR(6) NOT NULL,
+  problem BOOLEAN NOT NULL
+);

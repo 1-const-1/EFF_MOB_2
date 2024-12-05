@@ -2,6 +2,10 @@
 
 import * as knex from "knex";
 
+/**
+ * Knex.js (ORM)
+ * PostgreSQL Client
+ */
 export const kxclnt = knex({
   client: "pg",
   connection: {

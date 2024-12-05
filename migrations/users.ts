@@ -4,11 +4,14 @@ import * as fs from "fs";
 import * as path from "path";
 import { kxclnt } from "./knex";
 
+/**
+ * Run this script to load migrtion
+ */
 (async () => {
   try {
     
     // MOCK DATA CONTAINS 1000 ROWS (file: db/users/mock.json)
-    const d = JSON.parse(fs.readFileSync(path.join(__dirname, "../../db/users/mock.json")).toString());
+    const d = JSON.parse(fs.readFileSync(path.join(__dirname, "../db/users/mock.json")).toString());
   
     const l = 3000;
     for (let i = 0; i < l; i++) 

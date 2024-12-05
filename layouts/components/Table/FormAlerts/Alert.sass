@@ -1,7 +1,49 @@
-.alert-wnd
+@use "../../../Palette.sass" as palette
+
+.alert-cnt
   position: fixed
   top: 0
   left: 0
+  display: flex
+  flex-direction: row
+  justify-content: center
+  align-items: center
+
+.alert-wnd
   background-color: #fff
-  width: 100%
-  height: 100%
+  box-shadow: 0px 0px 10px palette.$shadow
+  border-radius: 16px
+  padding: 32px
+  width: 320px
+
+  *
+    font-size: 1.2rem
+
+  & > div
+    display: flex
+    flex-direction: column
+    align-items: stretch
+
+  & > :first-child
+    align-items: center
+    text-align: center
+
+  button
+    border: none
+    margin: 8px 0
+    border-radius: 8px
+    padding: 16px 64px
+    background-color: palette.$active_elms
+    color: #fefefe
+    font-weight: 700
+    cursor: pointer
+    
+  button
+    span
+      font-size: 0.8rem 
+    
+
+.alert-wnd
+  .solve-button 
+    background-color: #f71542
+    

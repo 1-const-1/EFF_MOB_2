@@ -1,0 +1,61 @@
+@use "../Palette.sass" as palette
+  
+.tbl-render 
+  background-color: palette.$bg_color
+  box-shadow: 0 5px 10px palette.$shadow
+  border-radius: 16px
+  padding: 32px
+
+.user-counter 
+  p
+    padding: 0
+    margin: 0
+
+.user-counter 
+  & > p:last-child
+    font-size: 5rem
+    font-weight: 700
+
+.tbl-form
+  display: flex
+  flex-direction: row
+  justify-content: center
+  align-items: center
+
+.tbl-form
+
+  *
+    font-size: 1.2rem
+
+  & > div
+    input
+      width: 64px
+      margin-right: 16px
+      border: none
+      background-color: transparent
+      border-radius: 0
+      border-bottom: 1px solid #10101020
+      text-align: center
+
+    & > :focus
+      outline: none
+
+  button
+    border: none
+    border-radius: 8px
+    padding: 16px 64px
+    background-color: palette.$active_elms
+    color: #fefefe
+    font-weight: 700
+    cursor: pointer
+
+      
+.tbl-form
+  & > div
+    padding: 32px
+
+.tbl-form
+  & > div:first-child
+    display: flex
+    flex-direction: row
+    align-items: center

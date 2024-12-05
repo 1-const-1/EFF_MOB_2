@@ -39,13 +39,16 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var fs = require("fs");
 var path = require("path");
 var knex_1 = require("./knex");
+/**
+ * Run this script to load migrtion
+ */
 (function () { return __awaiter(void 0, void 0, void 0, function () {
     var d, l, i, err_1;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
                 _a.trys.push([0, 5, , 6]);
-                d = JSON.parse(fs.readFileSync(path.join(__dirname, "../../db/users/mock.json")).toString());
+                d = JSON.parse(fs.readFileSync(path.join(__dirname, "../db/users/mock.json")).toString());
                 l = 3000;
                 i = 0;
                 _a.label = 1;

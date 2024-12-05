@@ -5,6 +5,12 @@ import {GoCheckCircle, GoAlertFill} from "react-icons/go";
 import {BsGenderFemale, BsGenderMale} from "react-icons/bs";
 import Alert from "./FormAlerts/Alert";
 
+/**
+ * This element contains all necessary info about users.
+ * Shortly: The list of users.
+ * @param props 
+ * @returns 
+ */
 const TableBody = (props:{
   data : Array<TableIndex>,
   setterTrouble : any,
@@ -16,24 +22,24 @@ const TableBody = (props:{
 
   return (
   <>
-    <tbody>{props.data.map( (v, idx) => {
-      return <tr key={idx} onClick={() => {
+    <div className="tbl-body">{props.data.map( (v, idx) => {
+      return <div key={idx} className={`${!v.problem ? "" : "problem-user"}`} onClick={() => {
         setUserId(v.id);
         setProblem(v.problem);
         setHidden(false);
       }}>
-        <td>{v.id}</td>
-        <td>
+        <div>{v.id}</div>
+        <div className="tbl-user-info">
           <div>Name: {v.name} {v.surname}</div>
           <div>Gender: {v.gender} {v.gender === "Male" ? <BsGenderMale/> : <BsGenderFemale />}</div>
           <div>Age: {v.age}</div>
           <div hidden={!v.problem ? true : false}>Click to check the problem</div>
-        </td>
-        <td>
+        </div>
+        <div className="tbl-alert-icon">
           {!v.problem ? <GoCheckCircle /> : <GoAlertFill /> }
-        </td>
-      </tr>;
-    })}</tbody>
+        </div>
+      </div>;
+    })}</div>
     {ReactDOM.createPortal(
       <Alert 
         userId={userId} 

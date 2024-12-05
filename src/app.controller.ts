@@ -3,6 +3,12 @@ import { pgclnt } from "./pgclnt";
 
 @Controller()
 export class MainPage {
+
+  /**
+   * It sends all data in one request
+   * @param body 
+   * @returns 
+   */
   @Post("/page")
   async getPage (@Body() body : any) {
     const jData = body;
@@ -17,6 +23,11 @@ export class MainPage {
     return {len: l, troubles: troubles, data: d};
   }
 
+  /**
+   * It updates data after that how a problem will be solved
+   * @param body 
+   * @returns 
+   */
   @Post("/solve")
   async solveProblem (@Body() body : any) {
     const jData = body;

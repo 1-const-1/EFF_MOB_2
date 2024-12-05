@@ -1,6 +1,7 @@
 import * as React from "react";
-import TableHeader from "./Header";
 import TableBody from "./Body";
+
+import "./Table.sass";
 
 export interface TableIndex {
   id : number,
@@ -11,18 +12,22 @@ export interface TableIndex {
   problem : boolean,
 }
 
+/**
+ * The container for a list.
+ * @param props 
+ * @returns 
+ */
 const Tabel = (props: {
   data: Array<TableIndex>,
   setterTrouble : any,
 }) => {
   return (
-    <table>
-      <TableHeader val={props.data[0]}/>
+    <div className="tbl-users">
       <TableBody 
         data={props.data}
         setterTrouble={props.setterTrouble}
         />
-    </table>
+    </div>
   );
 }
 

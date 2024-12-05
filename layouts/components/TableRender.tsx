@@ -2,6 +2,13 @@ import * as React from "react";
 import Tabel from "./Table/Table";
 import { getPage } from "./fetch";
 
+import "./TableRender.sass";
+
+/**
+ * This container renders the structure to manage the list of users.
+ * Aka implementation of a dashboard.
+ * @returns 
+ */
 const TableRender = () => {
 
   const [maxLength, setMaxLength] = React.useState(1);
@@ -28,8 +35,8 @@ const TableRender = () => {
   }, []);
 
   return (
-    <div>
-      <div>
+    <div className="tbl-render">
+      <div className="user-counter">
         <p>Users with troubles:</p>
         <p>{troubles}</p>
       </div>
@@ -39,15 +46,20 @@ const TableRender = () => {
                   setterTrouble={setTroubles}/> 
               : "No data"}</div>
       <div>
-        <form onSubmit={(e) => e.preventDefault()}>
+        <form 
+          className="tbl-form"
+          onSubmit={(e) => e.preventDefault()}>
           <div>
-            <input onChange={(e) => setLastPage(Number(e.target.value))} type="text" />
+            <input 
+              onChange={(e) => setLastPage(Number(e.target.value))} 
+              type="text" 
+              placeholder="Page 1"/>
             <div>max: {maxLength}</div>
           </div>
           <div>
             <button onClick={async () => {
               setTblData((await getPage(lastPage, 50)).data);
-            }}>Submit</button>
+            }}>Load</button>
           </div>
         </form>
       </div>

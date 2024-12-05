@@ -1,0 +1,180 @@
+/*!*****************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./layouts/components/Table/FormAlerts/Alert.sass ***!
+  \*****************************************************************************************************************************************/
+.alert-cnt {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.alert-wnd {
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(16, 16, 16, 0.1882352941);
+  border-radius: 16px;
+  padding: 32px;
+  width: 320px;
+}
+.alert-wnd * {
+  font-size: 1.2rem;
+}
+.alert-wnd > div {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.alert-wnd > :first-child {
+  align-items: center;
+  text-align: center;
+}
+.alert-wnd button {
+  border: none;
+  margin: 8px 0;
+  border-radius: 8px;
+  padding: 16px 64px;
+  background-color: #235eff;
+  color: #fefefe;
+  font-weight: 700;
+  cursor: pointer;
+}
+.alert-wnd button span {
+  font-size: 0.8rem;
+}
+
+.alert-wnd .solve-button {
+  background-color: #f71542;
+}
+/*!******************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./layouts/components/Table/Table.sass ***!
+  \******************************************************************************************************************************/
+.tbl-header > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  width: 560px;
+  padding: 8px;
+  margin: 16px 0;
+  background-color: #ededed;
+  border-radius: 8px;
+  font-size: 1.2rem;
+}
+
+.tbl-body {
+  display: flex;
+  flex-direction: column;
+  height: 640px;
+  overflow-y: scroll;
+  padding: 32px 64px;
+}
+
+.tbl-body > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  width: 560px;
+  padding: 8px;
+  margin: 16px 0;
+  background-color: #ededed;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.tbl-body > div:hover {
+  background-color: #ddd;
+}
+
+.tbl-alert-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tbl-user-info {
+  width: 100%;
+  padding: 0 64px;
+}
+
+.tbl-body .problem-user {
+  background-color: #f71542;
+  color: #fefefe;
+}
+/*!******************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./layouts/components/TableRender.sass ***!
+  \******************************************************************************************************************************/
+.tbl-render {
+  background-color: #fefefe;
+  box-shadow: 0 5px 10px rgba(16, 16, 16, 0.1882352941);
+  border-radius: 16px;
+  padding: 32px;
+}
+
+.user-counter p {
+  padding: 0;
+  margin: 0;
+}
+
+.user-counter > p:last-child {
+  font-size: 5rem;
+  font-weight: 700;
+}
+
+.tbl-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.tbl-form * {
+  font-size: 1.2rem;
+}
+.tbl-form > div input {
+  width: 64px;
+  margin-right: 16px;
+  border: none;
+  background-color: transparent;
+  border-radius: 0;
+  border-bottom: 1px solid rgba(16, 16, 16, 0.1254901961);
+  text-align: center;
+}
+.tbl-form > div > :focus {
+  outline: none;
+}
+.tbl-form button {
+  border: none;
+  border-radius: 8px;
+  padding: 16px 64px;
+  background-color: #235eff;
+  color: #fefefe;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.tbl-form > div {
+  padding: 32px;
+}
+
+.tbl-form > div:first-child {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+/*!**********************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./layouts/components/App.sass ***!
+  \**********************************************************************************************************************/
+* {
+  font-family: Arial, sans-serif;
+}
+
+#root {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-weight: 300;
+}
